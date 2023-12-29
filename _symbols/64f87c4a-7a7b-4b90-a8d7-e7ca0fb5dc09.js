@@ -1,4 +1,4 @@
-// Galerija Carousel MAAD - Updated December 28, 2023
+// Galerija Carousel MAAD - Updated December 29, 2023
 function noop() { }
 function run(fn) {
     return fn();
