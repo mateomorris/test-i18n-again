@@ -2915,35 +2915,35 @@ let Component$1 = class Component extends SvelteComponent {
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[1] = list[i];
-	child_ctx[3] = i;
+	child_ctx[2] = list[i];
+	child_ctx[4] = i;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[4] = list[i];
-	child_ctx[3] = i;
+	child_ctx[5] = list[i];
+	child_ctx[4] = i;
 	return child_ctx;
 }
 
 function get_each_context_2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[6] = list[i].url;
-	child_ctx[7] = list[i].title;
-	child_ctx[8] = list[i].date;
-	child_ctx[9] = list[i].img;
-	child_ctx[10] = list[i].html;
+	child_ctx[7] = list[i].url;
+	child_ctx[8] = list[i].title;
+	child_ctx[9] = list[i].date;
+	child_ctx[10] = list[i].img;
+	child_ctx[11] = list[i].html;
 	return child_ctx;
 }
 
 function get_each_context_3(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[3] = list[i];
+	child_ctx[4] = list[i];
 	return child_ctx;
 }
 
-// (195:14) {#each [1,2,3] as i}
+// (203:14) {#each [1,2,3] as i}
 function create_each_block_3(ctx) {
 	let span;
 	let icon;
@@ -2995,22 +2995,22 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (184:8) {#each page as {url, title, date, img, html}}
+// (192:8) {#each page as {url, title, date, img, html}}
 function create_each_block_2(ctx) {
 	let article;
 	let div0;
 	let h2;
-	let t0_value = /*title*/ ctx[7] + "";
+	let t0_value = /*title*/ ctx[8] + "";
 	let t0;
 	let t1;
 	let h5;
 	let icon;
 	let t2;
-	let t3_value = /*date*/ ctx[8] + "";
+	let t3_value = /*date*/ ctx[9] + "";
 	let t3;
 	let t4;
 	let html_tag;
-	let raw_value = /*html*/ ctx[10] + "";
+	let raw_value = /*html*/ ctx[11] + "";
 	let t5;
 	let a;
 	let span;
@@ -3131,16 +3131,16 @@ function create_each_block_2(ctx) {
 			attr(h5, "class", "svelte-1cpdfv7");
 			html_tag.a = t5;
 			attr(a, "class", "button inverted svelte-1cpdfv7");
-			attr(a, "href", /*url*/ ctx[6]);
-			attr(a, "aria-label", "Read more about " + /*title*/ ctx[7]);
+			attr(a, "href", /*url*/ ctx[7]);
+			attr(a, "aria-label", "Read more about " + /*title*/ ctx[8]);
 			attr(div0, "class", "svelte-1cpdfv7");
-			if (!src_url_equal(img.src, img_src_value = /*img*/ ctx[9])) attr(img, "src", img_src_value);
-			attr(img, "alt", /*title*/ ctx[7]);
+			if (!src_url_equal(img.src, img_src_value = /*img*/ ctx[10])) attr(img, "src", img_src_value);
+			attr(img, "alt", /*title*/ ctx[8]);
 			attr(img, "loading", "lazy");
 			attr(img, "class", "svelte-1cpdfv7");
 			attr(div1, "class", "barrels svelte-1cpdfv7");
 			attr(div2, "class", "svelte-1cpdfv7");
-			attr(article, "aria-labelledby", /*title*/ ctx[7]);
+			attr(article, "aria-labelledby", /*title*/ ctx[8]);
 			attr(article, "class", "svelte-1cpdfv7");
 		},
 		m(target, anchor) {
@@ -3229,11 +3229,11 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (182:4) {#each blog as page, i}
+// (190:4) {#each blog as page, i}
 function create_each_block_1(ctx) {
 	let div;
 	let current;
-	let each_value_2 = /*page*/ ctx[4];
+	let each_value_2 = /*page*/ ctx[5];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_2.length; i += 1) {
@@ -3267,7 +3267,7 @@ function create_each_block_1(ctx) {
 		},
 		h() {
 			attr(div, "class", "page");
-			toggle_class(div, "active", /*i*/ ctx[3] === activePage);
+			toggle_class(div, "active", /*i*/ ctx[4] === activePage);
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -3282,7 +3282,7 @@ function create_each_block_1(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty & /*blog, Math*/ 0) {
-				each_value_2 = /*page*/ ctx[4];
+				each_value_2 = /*page*/ ctx[5];
 				let i;
 
 				for (i = 0; i < each_value_2.length; i += 1) {
@@ -3333,7 +3333,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (206:4) {#if blog.length > 1}
+// (214:4) {#if blog.length > 1}
 function create_if_block(ctx) {
 	let div;
 	let each_value = blog;
@@ -3407,10 +3407,10 @@ function create_if_block(ctx) {
 	};
 }
 
-// (208:4) {#each blog as _, i}
+// (216:4) {#each blog as _, i}
 function create_each_block(ctx) {
 	let button;
-	let t_value = /*i*/ ctx[3] + 1 + "";
+	let t_value = /*i*/ ctx[4] + 1 + "";
 	let t;
 	let mounted;
 	let dispose;
@@ -3430,15 +3430,15 @@ function create_each_block(ctx) {
 		},
 		h() {
 			attr(button, "class", "button");
-			button.disabled = /*i*/ ctx[3] === activePage;
-			toggle_class(button, "inverted", /*i*/ ctx[3] === activePage);
+			button.disabled = /*i*/ ctx[4] === activePage;
+			toggle_class(button, "inverted", /*i*/ ctx[4] === activePage);
 		},
 		m(target, anchor) {
 			insert_hydration(target, button, anchor);
 			append_hydration(button, t);
 
 			if (!mounted) {
-				dispose = listen(button, "click", activePage = /*i*/ ctx[3]);
+				dispose = listen(button, "click", activePage = /*i*/ ctx[4]);
 				mounted = true;
 			}
 		},
@@ -3454,9 +3454,13 @@ function create_each_block(ctx) {
 }
 
 function create_fragment(ctx) {
-	let div1;
 	let div0;
-	let t;
+	let t0_value = JSON.stringify(blog) + "";
+	let t0;
+	let t1;
+	let div2;
+	let div1;
+	let t2;
 	let current;
 	let each_value_1 = blog;
 	let each_blocks = [];
@@ -3473,49 +3477,61 @@ function create_fragment(ctx) {
 
 	return {
 		c() {
-			div1 = element("div");
 			div0 = element("div");
+			t0 = text(t0_value);
+			t1 = space();
+			div2 = element("div");
+			div1 = element("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
-			t = space();
+			t2 = space();
 			if (if_block) if_block.c();
 			this.h();
 		},
 		l(nodes) {
-			div1 = claim_element(nodes, "DIV", { class: true });
-			var div1_nodes = children(div1);
-			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			div0 = claim_element(nodes, "DIV", {});
 			var div0_nodes = children(div0);
+			t0 = claim_text(div0_nodes, t0_value);
+			div0_nodes.forEach(detach);
+			t1 = claim_space(nodes);
+			div2 = claim_element(nodes, "DIV", { class: true });
+			var div2_nodes = children(div2);
+			div1 = claim_element(div2_nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(div0_nodes);
+				each_blocks[i].l(div1_nodes);
 			}
 
-			t = claim_space(div0_nodes);
-			if (if_block) if_block.l(div0_nodes);
-			div0_nodes.forEach(detach);
+			t2 = claim_space(div1_nodes);
+			if (if_block) if_block.l(div1_nodes);
 			div1_nodes.forEach(detach);
+			div2_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "section-container");
-			attr(div1, "class", "wrapper");
+			attr(div1, "class", "section-container");
+			attr(div2, "class", "wrapper");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div1, anchor);
-			append_hydration(div1, div0);
+			insert_hydration(target, div0, anchor);
+			append_hydration(div0, t0);
+			/*div0_binding*/ ctx[1](div0);
+			insert_hydration(target, t1, anchor);
+			insert_hydration(target, div2, anchor);
+			append_hydration(div2, div1);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(div0, null);
+					each_blocks[i].m(div1, null);
 				}
 			}
 
-			append_hydration(div0, t);
-			if (if_block) if_block.m(div0, null);
+			append_hydration(div1, t2);
+			if (if_block) if_block.m(div1, null);
 			current = true;
 		},
 		p(ctx, [dirty]) {
@@ -3533,7 +3549,7 @@ function create_fragment(ctx) {
 						each_blocks[i] = create_each_block_1(child_ctx);
 						each_blocks[i].c();
 						transition_in(each_blocks[i], 1);
-						each_blocks[i].m(div0, t);
+						each_blocks[i].m(div1, t2);
 					}
 				}
 
@@ -3567,7 +3583,10 @@ function create_fragment(ctx) {
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div1);
+			if (detaching) detach(div0);
+			/*div0_binding*/ ctx[1](null);
+			if (detaching) detach(t1);
+			if (detaching) detach(div2);
 			destroy_each(each_blocks, detaching);
 			if (if_block) if_block.d();
 		}
@@ -3609,11 +3628,16 @@ const fetchPosts = async () => {
 	return blog;
 };
 
-console.log(window.location);
 let blog = [];
 
 if (window.location.host === '' || window.location.host === 'localhost:5173') {
 	blog = await fetchPosts().catch(error => console.error('Error fetching posts:', error));
+}
+
+let blog_json;
+
+if (window.location.host !== '' && window.location.host !== 'localhost:5173') {
+	blog = JSON.parse(blog_json.innerHTML);
 }
 
 let activePage = 0;
@@ -3621,11 +3645,17 @@ let activePage = 0;
 function instance($$self, $$props, $$invalidate) {
 	let { props } = $$props;
 
+	function div0_binding($$value) {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+			blog_json = $$value;
+		});
+	}
+
 	$$self.$$set = $$props => {
 		if ('props' in $$props) $$invalidate(0, props = $$props.props);
 	};
 
-	return [props];
+	return [props, div0_binding];
 }
 
 class Component extends SvelteComponent {
