@@ -3633,7 +3633,7 @@ if (window.location.host === '' || window.location.host === 'localhost:5173') {
 	console.log('building');
 	blog = await fetchPosts().catch(error => console.error('Error fetching posts:', error));
 } else {
-	const blog_json = document.querySelector('blog-json');
+	const blog_json = document.querySelector('#blog-json');
 	console.log({ blog_json }, blog_json.innerHTML);
 	blog = JSON.parse(blog_json.innerHTML);
 }
