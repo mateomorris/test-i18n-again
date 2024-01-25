@@ -3704,7 +3704,7 @@ function instance($$self, $$props, $$invalidate) {
 			if (blog_json && window.location.host !== '' && window.location.host !== 'localhost:5173') {
 				console.log(blog_json);
 				blog = JSON.parse(blog_json.innerHTML);
-				console.log('hydrating');
+				console.log('hydrating', blog_json.innerHTML);
 			}
 		}
 	};
