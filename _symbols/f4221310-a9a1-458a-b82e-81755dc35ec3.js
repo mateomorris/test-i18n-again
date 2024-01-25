@@ -2949,7 +2949,7 @@ function get_each_context_3(ctx, list, i) {
 	return child_ctx;
 }
 
-// (206:14) {#each [1,2,3] as i}
+// (207:14) {#each [1,2,3] as i}
 function create_each_block_3(ctx) {
 	let span;
 	let icon;
@@ -3001,7 +3001,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (195:8) {#each page as {url, title, date, img, html}}
+// (196:8) {#each page as {url, title, date, img, html}}
 function create_each_block_2(ctx) {
 	let article;
 	let div0;
@@ -3263,7 +3263,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (193:4) {#each blog as page, i}
+// (194:4) {#each blog as page, i}
 function create_each_block_1(ctx) {
 	let div;
 	let current;
@@ -3367,7 +3367,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (217:4) {#if blog.length > 1}
+// (218:4) {#if blog.length > 1}
 function create_if_block(ctx) {
 	let div;
 	let each_value = blog;
@@ -3441,7 +3441,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (219:4) {#each blog as _, i}
+// (220:4) {#each blog as _, i}
 function create_each_block(ctx) {
 	let button;
 	let t_value = /*i*/ ctx[5] + 1 + "";
@@ -3701,7 +3701,8 @@ function instance($$self, $$props, $$invalidate) {
 
 	$$self.$$.update = () => {
 		if ($$self.$$.dirty & /*blog_json*/ 1) {
-			if (window.location.host !== '' && window.location.host !== 'localhost:5173') {
+			if (blog_json && window.location.host !== '' && window.location.host !== 'localhost:5173') {
+				console.log(blog_json);
 				blog = JSON.parse(blog_json.innerHTML);
 				console.log('hydrating');
 			}
