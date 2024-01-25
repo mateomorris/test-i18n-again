@@ -2943,7 +2943,7 @@ function get_each_context_3(ctx, list, i) {
 	return child_ctx;
 }
 
-// (190:14) {#each [1,2,3] as i}
+// (191:14) {#each [1,2,3] as i}
 function create_each_block_3(ctx) {
 	let span;
 	let icon;
@@ -2995,7 +2995,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (179:8) {#each page as {url, title, date, img, html}}
+// (180:8) {#each page as {url, title, date, img, html}}
 function create_each_block_2(ctx) {
 	let article;
 	let div0;
@@ -3229,7 +3229,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (177:4) {#each blog as page, i}
+// (178:4) {#each blog as page, i}
 function create_each_block_1(ctx) {
 	let div;
 	let current;
@@ -3333,7 +3333,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (201:4) {#if blog.length > 1}
+// (202:4) {#if blog.length > 1}
 function create_if_block(ctx) {
 	let div;
 	let each_value = blog;
@@ -3407,7 +3407,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (203:4) {#each blog as _, i}
+// (204:4) {#each blog as _, i}
 function create_each_block(ctx) {
 	let button;
 	let t_value = /*i*/ ctx[3] + 1 + "";
@@ -3573,6 +3573,8 @@ function create_fragment(ctx) {
 		}
 	};
 }
+
+console.log('RUNNING');
 
 const fetchPosts = async () => {
 	const apiUrl = 'http://localhost:5173/api';
