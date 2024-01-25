@@ -2943,7 +2943,7 @@ function get_each_context_3(ctx, list, i) {
 	return child_ctx;
 }
 
-// (193:14) {#each [1,2,3] as i}
+// (195:14) {#each [1,2,3] as i}
 function create_each_block_3(ctx) {
 	let span;
 	let icon;
@@ -2995,7 +2995,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (182:8) {#each page as {url, title, date, img, html}}
+// (184:8) {#each page as {url, title, date, img, html}}
 function create_each_block_2(ctx) {
 	let article;
 	let div0;
@@ -3229,7 +3229,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (180:4) {#each blog as page, i}
+// (182:4) {#each blog as page, i}
 function create_each_block_1(ctx) {
 	let div;
 	let current;
@@ -3333,7 +3333,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (204:4) {#if blog.length > 1}
+// (206:4) {#if blog.length > 1}
 function create_if_block(ctx) {
 	let div;
 	let each_value = blog;
@@ -3407,7 +3407,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (206:4) {#each blog as _, i}
+// (208:4) {#each blog as _, i}
 function create_each_block(ctx) {
 	let button;
 	let t_value = /*i*/ ctx[3] + 1 + "";
@@ -3609,9 +3609,13 @@ const fetchPosts = async () => {
 	return blog;
 };
 
-console.log(window.location.pathname);
+console.log(window.location);
 let blog = [];
-blog = await fetchPosts().catch(error => console.error('Error fetching posts:', error));
+
+if (window.location.host === '' || window.location.host === 'localhost:5173') {
+	blog = await fetchPosts().catch(error => console.error('Error fetching posts:', error));
+}
+
 let activePage = 0;
 
 function instance($$self, $$props, $$invalidate) {
