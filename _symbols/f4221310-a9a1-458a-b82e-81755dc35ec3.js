@@ -2943,7 +2943,7 @@ function get_each_context_3(ctx, list, i) {
 	return child_ctx;
 }
 
-// (206:14) {#each [1,2,3] as i}
+// (204:14) {#each [1,2,3] as i}
 function create_each_block_3(ctx) {
 	let span;
 	let icon;
@@ -2995,7 +2995,7 @@ function create_each_block_3(ctx) {
 	};
 }
 
-// (195:8) {#each page as {url, title, date, img, html}}
+// (193:8) {#each page as {url, title, date, img, html}}
 function create_each_block_2(ctx) {
 	let article;
 	let div0;
@@ -3229,7 +3229,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (193:4) {#each blog as page, i}
+// (191:4) {#each blog as page, i}
 function create_each_block_1(ctx) {
 	let div;
 	let current;
@@ -3333,7 +3333,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (217:4) {#if blog.length > 1}
+// (215:4) {#if blog.length > 1}
 function create_if_block(ctx) {
 	let div;
 	let each_value = blog;
@@ -3407,7 +3407,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (219:4) {#each blog as _, i}
+// (217:4) {#each blog as _, i}
 function create_each_block(ctx) {
 	let button;
 	let t_value = /*i*/ ctx[3] + 1 + "";
@@ -3492,7 +3492,7 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div0 = claim_element(nodes, "DIV", { id: true });
+			div0 = claim_element(nodes, "DIV", { id: true, style: true });
 			var div0_nodes = children(div0);
 			t0 = claim_text(div0_nodes, t0_value);
 			div0_nodes.forEach(detach);
@@ -3514,6 +3514,7 @@ function create_fragment(ctx) {
 		},
 		h() {
 			attr(div0, "id", "blog-json");
+			set_style(div0, "display", "none");
 			attr(div1, "class", "section-container");
 			attr(div2, "class", "wrapper");
 		},
@@ -3630,11 +3631,9 @@ const fetchPosts = async () => {
 let blog = [];
 
 if (window.location.host === '' || window.location.host === 'localhost:5173') {
-	console.log('building');
 	blog = await fetchPosts().catch(error => console.error('Error fetching posts:', error));
 } else {
 	const blog_json = document.querySelector('#blog-json');
-	console.log({ blog_json }, blog_json.innerHTML);
 	blog = JSON.parse(blog_json.innerHTML);
 }
 
